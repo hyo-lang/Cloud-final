@@ -1,0 +1,179 @@
+.user-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f9fb;
+}
+
+.sidebar {
+  width: 200px;
+  background: #fff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
+  padding: 2rem 1rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 0.8rem 0;
+  color: #666;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.menu li.active {
+  color: #e91e63;
+  font-weight: bold;
+}
+
+.menu li:hover {
+  color: #e91e63;
+}
+
+.main-content {
+  flex: 1;
+  padding: 3rem 4rem;
+  background: #f8f9fb;
+  overflow-y: auto;
+}
+
+.header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 28px;
+  color: #333;
+}
+
+.mypage-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* 상단 프로필 박스 */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 700px; /* ✅ 가로 폭 줄임 */
+  margin-bottom: 1.5rem;
+}
+
+.profile-photo-wrapper {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 4px solid #eaeaea;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info h2 {
+  font-size: 24px;
+  margin-bottom: 0.8rem;
+}
+
+.profile-info p {
+  margin: 0.3rem 0;
+  font-size: 16px;
+  color: #555;
+}
+
+/* 하단 섹션 */
+.detail-section-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+.info-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 최근 활동 항목 */
+.activity-item {
+  display: flex;
+  justify-content: space-evenly; /* ✅ 간격 더 자연스럽게 */
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.activity-item .label {
+  font-weight: 500;
+  width: 120px;
+  text-align: left;
+}
+
+.activity-item .value {
+  font-weight: bold;
+  color: #333;
+  width: 100px;
+  text-align: right;
+}
+
+.activity-item .value.point {
+  color: #6c63ff;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 500;
+}
+
+/* .badge.success {
+  background-color: #4caf50;
+} */
+
+/* 설정 항목 */
+.setting-item {
+  padding: 0.6rem 0.9rem;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  margin: 0.4rem auto; /* ✅ 중앙 정렬 */
+  width: 80%;
+  max-width: 300px; /* ✅ 너무 넓지 않게 */
+  text-align: center;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.setting-item:hover {
+  background-color: #e0e0e0;
+}
+
+.setting-item.danger {
+  color: #f44336;
+  font-weight: bold;
+}

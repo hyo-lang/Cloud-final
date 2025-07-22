@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.backend.dao.AdminsDAO">
+
+    <!-- 관리자 등록 -->
+    <insert id="insertAdmin">
+        INSERT INTO ADMINS (admindName, admindPwd, admindEmail, admindGender)
+        VALUES (#{admindName}, #{admindPwd}, #{admindEmail}, #{admindGender})
+    </insert>
+
+    <!-- 관리자 전체 조회 -->
+    <select id="selectAllAdmins" resultType="com.example.backend.dto.AdminsDTO">
+        SELECT * FROM ADMINS ORDER BY admindNum DESC
+    </select>
+
+    <!-- 관리자 번호로 조회 -->
+    <select id="selectAdminNum" resultType="adminsDTO">
+        SELECT * FROM ADMINS WHERE admindNum = #{admindNum}
+    </select>
+
+    <!-- 관리자 이메일로 조회 -->
+    <select id="selectAdminEmail" resultType="adminsDTO">
+        SELECT * FROM ADMINS WHERE admindEmail = #{admindEmail}
+    </select>
+
+    <!-- 관리자 이메일 존재 여부 -->
+    <select id="existsByAdmindEmail" resultType="int">
+        SELECT COUNT(*) FROM ADMINS WHERE admindEmail = #{admindEmail}
+    </select>
+
+    <!-- 페이징 조회 -->
+    <select id="pageAdmins" resultType="adminsDTO">
+        SELECT * FROM ADMINS
+        ORDER BY admindNum DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+</mapper>

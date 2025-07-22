@@ -133,3 +133,18 @@ button[type="submit"]:hover {
   font-size: 0.95rem;
   outline: none;
 }
+
+.admin-login {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.admin-login-link {
+  font-size: 0.9rem;
+  color: #777;
+  text-decoration: underline;
+}
+
+.admin-login-link:hover {
+  color: #444;
+}

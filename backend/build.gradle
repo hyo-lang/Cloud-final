@@ -24,13 +24,41 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // ✅ Spring Boot Web
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // ✅ MyBatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4'
+
+    // ✅ MySQL 드라이버
+    implementation 'mysql:mysql-connector-java:8.0.30'
+
+    // ✅ Jackson (시간 변환 필요 시 주석 해제)
+    // implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+    // ✅ Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // ✅ Validation
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // ✅ JWT
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+    // ✅ Security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // ✅ DevTools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // ✅ Test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
+
 
 tasks.named('test') {
 	useJUnitPlatform()

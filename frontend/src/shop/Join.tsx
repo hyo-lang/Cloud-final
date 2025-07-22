@@ -13,10 +13,10 @@ const Join = () => {
             <label htmlFor="name">Full Name</label>
             <input type="text" id="name" placeholder="Your name" />
           </div>
-          <div className="input-group">
+          {/* <div className="input-group">
             <label htmlFor="age">Age</label>
             <input type="number" id="age" placeholder="Your age" />
-          </div>
+          </div> */}
           <div className="input-group">
             <label htmlFor="gender">Gender</label>
             <select id="gender">
@@ -31,7 +31,7 @@ const Join = () => {
             <input type="email" id="email" placeholder="you@example.com" />
           </div>
           <div className="input-group">
-            <label htmlFor="address">Home Address</label>
+            <label htmlFor="address">Password</label>
             <input type="text" id="address" placeholder="123 Main Street" />
           </div>
           <button type="submit">Create Account</button>

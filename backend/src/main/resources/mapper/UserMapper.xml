@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.backend.dao.UserDAO">
+
+    <insert id="insertUser" parameterType="userdto"> 
+        INSERT INTO `USER` 
+            (userName, userId, userPwd, userPhone, userBirth, userEmail, userAddress, userAddressNum) 
+        VALUES (#{userName}, #{userId}, #{userPwd}, #{userPhone}, #{userBirth}, #{userEmail}, #{userAddress}, #{userAddressNum}) 
+    </insert>
+
+    <!-- 전체 사용자 조회 -->
+    <select id="selectAllUser" resultType="userdto"> 
+        SELECT * FROM `USER` 
+    </select>
+
+    <!-- 사용자 번호 조회 -->
+    <select id="selectUserNum" parameterType="Long" resultType="userdto"> 
+        SELECT * FROM `USER` WHERE userNum = #{userNum} 
+    </select>
+
+    <!-- 사용자 이름 조회 -->
+    <select id="selectUserName" parameterType="string" resultType="userdto"> 
+        SELECT * FROM USER WHERE userName = #{userName} 
+    </select>
+
+    <!-- 사용자 이메일로 조회 -->
+    <select id="selectUserEmail" parameterType="string" resultType="userdto"> 
+        SELECT * FROM USER WHERE userEmail = #{userEmail} 
+    </select>
+
+    <!-- 이메일 중복 체크 -->
+    <select id="existsByUserEmail" parameterType="string" resultType="int"> 
+        SELECT COUNT(*) FROM USER WHERE userEmail = #{email} 
+    </select>
+
+    <!-- 유저 페이징 처리 -->
+    <select id="pageUser" parameterType="map" resultType="userdto"> 
+        SELECT 
+            userNum, userName, userId, userPwd, userPhone, userBirth, userEmail, userAddress, userAddressNum, 
+            userStatus, userSignupDate 
+        FROM USER 
+        WHERE userNum IS NOT NULL 
+        ORDER BY userNum DESC LIMIT #{pageSize}
+        OFFSET #{offset} 
+    </select>
+
+</mapper>

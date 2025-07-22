@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sqldb
+    username: root  # 또는 MySQL Workbench 접속할 때 사용한 ID
+    password: 1234  # 위와 동일
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.example.backend.dto
+
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+server:
+  port: 8080
+
+
+jwt:
+  secret: c2t3bHFya3JodGx2ZWt0bHFrZndsc1drZmh3bHF3a3Jocmx2ZGpkeQ==
+  userTokenExpiration: 630000
+

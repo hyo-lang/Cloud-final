@@ -31,6 +31,12 @@ const Login = () => {
           <span style={{ margin: '0 8px', color: '#999' }}>|</span>
           <Link to="/">Main</Link>
         </div>
+        
+        <div className="admin-login">
+          <Link to="/admin/login" className="admin-login-link">
+            관리자 로그인
+          </Link>
+        </div>
       </div>
     </div>
   )

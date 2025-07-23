@@ -27,6 +27,7 @@ public class UserDTO {
     // @JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
     // private Date userBirth;
     private String userEmail;
+    private String userGender;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")

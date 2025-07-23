@@ -20,6 +20,30 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @PostMapping("/signup")
+    public ResponseEntity<?> signup(@RequestBody UserDTO userDTO) {
+
+    // 1) 필수값 검증 (간단히라도)
+    if (userDTO.getUserEmail() == null || userDTO.getUserPwd() == null) {
+        return ResponseEntity.badRequest().body("필수 입력값 누락");
+    }
+
+    // 2) 이메일 중복 체크 (true = 사용 가능으로 바꾸는 게 직관적)
+    // if (!userService.isEmailAvailable(userDTO.getUserEmail())) {
+    //     return ResponseEntity.status(HttpStatus.CONFLICT).body("이미 존재하는 이메일입니다.");
+    // }
+
+    // 3) 비밀번호 암호화 (스프링 시큐리티 PasswordEncoder 사용 권장)
+    // userDTO.setUserPwd(passwordEncoder.encode(userDTO.getUserPwd()));
+
+    // 4) Insert
+    if (userService.insertUser(userDTO)) {
+        return ResponseEntity.status(HttpStatus.CREATED).body("회원가입 성공");
+    }
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("회원가입 실패");
+}
+
+
     /** 🔹 모든 사용자 조회 */
     @GetMapping("/all")
     public ResponseEntity<?> selectAllUser() {

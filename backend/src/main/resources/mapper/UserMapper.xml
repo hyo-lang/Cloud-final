@@ -4,12 +4,13 @@
 
     <insert id="insertUser" parameterType="userdto"> 
         INSERT INTO `USER` 
-            (userName, userId, userPwd, userPhone, userBirth, userEmail, userAddress, userAddressNum) 
-        VALUES (#{userName}, #{userId}, #{userPwd}, #{userPhone}, #{userBirth}, #{userEmail}, #{userAddress}, #{userAddressNum}) 
+            (userName, userPwd, userEmail, userGender) 
+        VALUES (#{userName}, #{userPwd}, #{userEmail}, #{userGender}) 
     </insert>
 
     <!-- 전체 사용자 조회 -->
-    <select id="selectAllUser" resultType="userdto"> 
+    <select id="selectAllUser" resultType="com.example.backend.dto.UserDTO"
+> 
         SELECT * FROM `USER` 
     </select>
 
@@ -36,8 +37,7 @@
     <!-- 유저 페이징 처리 -->
     <select id="pageUser" parameterType="map" resultType="userdto"> 
         SELECT 
-            userNum, userName, userId, userPwd, userPhone, userBirth, userEmail, userAddress, userAddressNum, 
-            userStatus, userSignupDate 
+            userNum, userName, userPwd, userEmail, userAddress, userGender, userSignupDate 
         FROM USER 
         WHERE userNum IS NOT NULL 
         ORDER BY userNum DESC LIMIT #{pageSize}

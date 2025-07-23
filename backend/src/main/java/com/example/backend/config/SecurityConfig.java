@@ -35,7 +35,7 @@ public class SecurityConfig {
         // CORS 설정
         http.cors(cors -> cors.configurationSource(request -> {
             CorsConfiguration config = new CorsConfiguration();
-            config.setAllowedOrigins(List.of("http://localhost:5000", "http://localhost:6100")); // 구체적인 도메인 명시
+            config.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:6100")); // 구체적인 도메인 명시
             config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // 모든 HTTP 메서드 허용
             config.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-PWD-RESET-AUTH","x-api-key")); // 모든 헤더 허용
             config.setAllowCredentials(true); // credentials 허용하면 '*' 사용 불가

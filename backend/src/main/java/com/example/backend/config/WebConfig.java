@@ -13,10 +13,10 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         // React 앱이 실행되는 도메인만 허용
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:5000", "http://localhost:6100", "http://localhost:8000", "http://182.220.224.44")
+                .allowedOrigins("http://localhost:5173", "http://localhost:6100", "http://localhost:8000", "http://182.220.224.44")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowCredentials(true)
-                .allowedHeaders("Authorization", "Content-Type", "x-api-key");
+                .allowCredentials(true);
+                // .allowedHeaders("Authorization", "Content-Type", "x-api-key");
     }
 
 

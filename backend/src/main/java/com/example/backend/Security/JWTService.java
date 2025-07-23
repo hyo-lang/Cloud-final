@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.crypto.SecretKey;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.Authentication;
+// import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import com.example.backend.dto.AdminsDTO;
@@ -46,10 +46,12 @@ public class JWTService {
     //             .signWith(key, SignatureAlgorithm.HS256)
     //             .compact();
     // }
+
     public String createUserToken(UserDTO userDTO) {
     return Jwts.builder()
             .claim("userNum", userDTO.getUserNum())
             // .claim("userStatus", userDTO.getUserStatus())
+            .claim("userEmail", userDTO.getUserEmail())
             .claim("type", "user")
             .setIssuedAt(new Date())
             .setExpiration(new Date(System.currentTimeMillis() + userTokenExpiration))

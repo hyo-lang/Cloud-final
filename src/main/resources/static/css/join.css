@@ -1,0 +1,109 @@
+.login-wrapper {
+  height: 100vh;
+  width: 100%;
+  background-image: url('https://static.tildacdn.com/tild6661-3964-4265-b566-343264356131/Interior_Design.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  /* backdrop-filter: blur(5px) brightness(1.15); */
+  z-index: 1;
+}
+
+.join-box {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+  z-index: 2;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 28px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 2rem;
+  font-size: 14px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.input-group input,
+.input-group select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #6a5acd;
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #6a5acd;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #5941b2;
+}
+
+.extra-links {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.extra-links a {
+  color: #6a5acd;
+  text-decoration: none;
+  margin-left: 0.3rem;
+  font-weight: 500;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'war'
+    id 'org.springframework.boot' version '3.5.3'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.cloud'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 톰캣을 내장하지 않도록 providedRuntime 으로 설정 (외부 WAS에서 실행할 것이므로)
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'
+     implementation 'org.mariadb.jdbc:mariadb-java-client:3.1.4'  // 최신 안정 버전 중 하나
+
+    // JSP 관련 의존성 추가
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' // JSP 컴파일러
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:2.0.0' // JSTL API
+    runtimeOnly 'org.glassfish.web:jakarta.servlet.jsp.jstl:2.0.0' // JSTL 구현체
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+bootWar {
+    enabled = true
+}
+
+bootJar {
+    enabled = false
+}
+

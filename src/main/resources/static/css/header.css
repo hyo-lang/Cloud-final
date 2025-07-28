@@ -1,0 +1,61 @@
+/* Header.css */
+
+.shop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* JJangtrio 로고만 강조 */
+.shop-logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.3px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08); /* 부드러운 입체감 */
+  transition: transform 0.2s ease;
+}
+
+.shop-logo:hover {
+  transform: scale(1.03); /* 은은한 확대 */
+}
+
+/* Nav 메뉴 */
+.shop-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.shop-nav a {
+  font-size: 15px;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.shop-nav a:hover {
+  color: #222;
+}
+
+/* 오른쪽 아이콘 링크 */
+.shop-icons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.shop-icons a {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.shop-icons a:hover {
+  color: #222;
+}
